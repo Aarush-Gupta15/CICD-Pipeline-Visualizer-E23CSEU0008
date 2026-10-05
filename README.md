@@ -523,4 +523,4 @@ npm install
 npm run dev
 ```
 
-Vite proxies `/api` requests to `http://127.0.0.1:8000`. Set `VITE_API_BASE_URL` if the API is hosted separately. API routes and response details are documented in [docs/API.md](docs/API.md). The seeded data is for local UI development; the GitHub Actions integration will replace it in a later milestone.
+Vite proxies `/api` requests to `http://127.0.0.1:8000`. Set `VITE_API_BASE_URL` if the API is hosted separately. API routes and response details are documented in [docs/API.md](docs/API.md). The seeded data is for local UI development; GitHub Actions synchronization remains a later integration step. The CI workflow runs frontend build, Django API tests, dependency and Trivy security scans, then builds both Docker images without pushing them.

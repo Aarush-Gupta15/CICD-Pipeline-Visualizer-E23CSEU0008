@@ -463,9 +463,9 @@ The final system is intended to make pipeline execution easier to understand and
 
 ## 12. Project Status
 
-**Current Status: Backend API and Frontend Integration**
+**Current Status: CI Pipeline and Docker Builds**
 
-The React dashboard now reads repository, run, stage, and analytics data from a Django REST API. A local demo seed command is available for development. GitHub Actions synchronization and persistence of live workflow data are the next backend integration steps.
+GitHub Actions now runs a frontend build, Django API tests, dependency and Trivy security scans, and backend/frontend Docker image builds on pushes and pull requests to `main`. The dashboard is connected to the Django REST API using local demo data. Reading live workflow runs from GitHub Actions and deployment are later milestones.
 
 ---
 

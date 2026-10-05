@@ -463,11 +463,9 @@ The final system is intended to make pipeline execution easier to understand and
 
 ## 12. Project Status
 
-**Current Status: Project Definition and Documentation**
+**Current Status: Backend API and Frontend Integration**
 
-The GitHub repository has been created and the project documentation is being prepared.
-
-Implementation will be developed incrementally according to the project roadmap.
+The React dashboard now reads repository, run, stage, and analytics data from a Django REST API. A local demo seed command is available for development. GitHub Actions synchronization and persistence of live workflow data are the next backend integration steps.
 
 ---
 
@@ -504,3 +502,25 @@ https://github.com/Aarush-Gupta15/CICD-Pipeline-Visualizer-E23CSEU0008
 **Year:** Fourth Year
 **Student:** Aarush Gupta
 **Roll Number:** E23CSEU0008
+
+## Local Development
+
+The frontend dashboard reads pipeline data from the Django REST API. Start each service in a separate terminal:
+
+```bash
+cd backend
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py seed_demo
+python manage.py runserver 127.0.0.1:8000
+```
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Vite proxies `/api` requests to `http://127.0.0.1:8000`. Set `VITE_API_BASE_URL` if the API is hosted separately. API routes and response details are documented in [docs/API.md](docs/API.md). The seeded data is for local UI development; the GitHub Actions integration will replace it in a later milestone.
